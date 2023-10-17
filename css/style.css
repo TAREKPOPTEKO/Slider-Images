@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif ;
+    background-color: #2A2C24;
+}
+
+.owner h1 {
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; 
+    border-right: .15em solid #399E5A;
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #399E5A }
+}
+.all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} 
+.slider-container {
+    margin: 10px auto;
+    width: 800px;
+    height: 500px;
+    position: relative;
+    border-radius: 10px;
+}
+.slider-container img {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+    border-radius: 10px;
+
+}
+.slider-container img.active {
+    opacity: 1;
+}
+.slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px;
+}
+.slider-controls {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-controls .prev,
+.slider-controls .next {
+    background-color: #399E5A;
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+.slider-controls .prev:hover,
+.slider-controls .next:hover {
+    background-color: #00563B;
+}
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled {
+    background-color: #399e5b6a;
+    cursor: no-drop;
+}
+
+.slider-controls .indicators {
+    width: 100%;
+}
+.slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+.slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #f6f6f6;
+    color:#333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.slider-controls .indicators ul li.active {
+    background-color: #399E5A;
+    color: white;
+}
